@@ -9,7 +9,7 @@ function myFilter(array, callback) {
   let newArray = []
 
   for (let i = 0; i < array.length; i++) {
-    if(callback(array[i])) newArray.push(array[i]);
+    if(callback(array[i], i, array)) newArray.push(array[i]);
   }
 
   return newArray;
@@ -18,5 +18,5 @@ function myFilter(array, callback) {
 const numbers = [1, 2, 3, 4];
 
 console.log(myFilter(numbers,(item) => {
-    return item !== 3
+    return item % 2 === 0
 }));
