@@ -1,9 +1,9 @@
 function myMap(array, callback) {
   if (!Array.isArray(array)) {
-    console.log("Первый аргумент должен быть массивом");
+    throw new Error("Первый аргумент должен быть массивом");
   }
   if (typeof callback !== "function") {
-    console.log("Второй аргумент должен быть функцией");
+    throw new Error("Второй аргумент должен быть функцией");
   }
 
   let newArray = [];
