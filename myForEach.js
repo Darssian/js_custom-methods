@@ -1,11 +1,10 @@
 function myForEach(array, callback) {
     if (!Array.isArray(array)) {
-       console.log('Первый аргумент должен быть массивом');
-       
-    }
-    if (typeof callback !== 'function') {
-        console.log('Второй аргумент должен быть массивом');
-    }
+        throw new Error("Первый аргумент должен быть массивом");
+      }
+      if (typeof callback !== "function") {
+        throw new Error("Второй аргумент должен быть функцией");
+      }
 
     for (let i = 0; i < array.length; i++) {
         callback(array[i], i, array);
